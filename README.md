@@ -44,7 +44,7 @@ Your code is expected to be clean and well-formatted.
 
 ## Process
 
-1. ~~Create a new CRA app.~~
+1. Create a new CRA app.
 2. Create a Header that has a Nav.
 3. Create a Cart Icon component and position this next to your Nav. This Cart icon component will have an overlay that displays the number of items in the cart.
 4. Create a Footer component
