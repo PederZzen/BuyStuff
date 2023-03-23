@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { color } from "../../../utils/constants";
 
 export const Button = styled.button `
     padding: .5rem;
@@ -10,7 +11,7 @@ export const Button = styled.button `
 `
 
 export const CartNumber = styled.div `
-    background-color: red;
+    background-color: ${color.main};
     color: white;
     border-radius: 50%;
     font-size: .8rem;

@@ -8,7 +8,7 @@ const Item = ({ product }) => {
         <Image src={product.imageUrl} alt={product.title}/>
         <p>{product.title}</p>
         <Link to={`/product/${product.id}`}>
-            <Button>View product</Button>
+          <Button>View product</Button>
         </Link>
     </Wrapper>
   )

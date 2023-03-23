@@ -15,6 +15,7 @@ const Home = () => {
         <Wrapper>
             <h1>Welcome to BuyStuff.no</h1>
             <h2>Your friendly neighbourhood online store</h2>
+            
             <ProductsContainer>
                 {data ? data.map((product, idx) => {
                     return <Item key={idx} product={product}>{product.title}</Item>

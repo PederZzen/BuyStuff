@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import CartIcon from '../cart/CartIcon'
+import { Link, NavLink } from 'react-router-dom'
+import Cart from '../cart/Cart'
 import { Content, Menu, Wrapper } from './style'
 
 const Header = () => {
@@ -8,11 +8,13 @@ const Header = () => {
     <Wrapper>
         <Content>
             <Menu>
-                <h1>BuyStuff.no</h1>
-                <Link to="/">Home</Link>
-                <Link to="contact">Contact</Link>
+                <NavLink to="/">
+                  <h1>BuyStuff.no</h1>
+                </NavLink>
+                <NavLink className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "activeNavlink" : ""} to="/">Home</NavLink>
+                <NavLink className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "activeNavlink" : ""} to="contact">Contact</NavLink>
             </Menu>
-            <CartIcon />
+            <Cart />
         </Content>
     </Wrapper>
   )

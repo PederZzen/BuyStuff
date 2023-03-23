@@ -1,11 +1,15 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { color } from "../../../utils/constants";
 
 export const Wrapper = styled.nav `
     position: fixed;
     top: 0;
-    background-color: beige;
+    background-color: white;
     padding: 1.5rem;
     width: 100%;
+    z-index: 99;
+    box-shadow: 0 0 2px ${color.main};
 `
 
 export const Menu = styled.div `
@@ -13,10 +17,11 @@ export const Menu = styled.div `
     align-items: center;
 
     * {
-        padding: 0 2rem;
+        margin: 0 2rem;
 
         &:nth-child(1) {
-            padding-left: 0;
+            padding: 0;
+            margin: 0 1rem 0 0;
         }
     }
 `
@@ -28,3 +33,4 @@ export const Content = styled.div `
     align-items: center;
     justify-content: space-between;
 `
+

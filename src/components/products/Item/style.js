@@ -1,26 +1,39 @@
 import styled from "styled-components";
+import { color } from "../../../utils/constants";
 
 export const Image = styled.img `
     width: 100%;
-    height: 15rem;
+    height: 20rem;
     object-fit: cover;
+    transition: .4s all;
+
+    &:hover {
+        width: 120%;;
+    }
 `
 
 export const Wrapper = styled.div `
-    max-height: 20rem;
-    max-width: 20rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
     margin-bottom: 2.5rem;
+    overflow: hidden;
+
 `
 
 export const Button = styled.button `
-    display: block;
     font-size: 1rem;
-    background-color: beige;
-    border: none;
+    border: 1px solid ${color.main};
+    background-color: transparent;
+    border-radius: 3px;
+    color: ${color.main};
     padding: .5rem;
     cursor: pointer;
+    transition: .3s all;
+
+    &:hover {
+        background-color: ${color.main};
+        color:  white;
+    }
 `

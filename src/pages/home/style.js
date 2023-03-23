@@ -21,6 +21,6 @@ export const ProductsContainer = styled.div `
     max-width: 1200px;
     padding-top: 4rem;
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 1rem;
 `
