@@ -1,10 +1,13 @@
 import React from 'react'
+import ContactForm from '../../components/forms/contactForm'
+import { Wrapper } from './style'
 
 const Contact = () => {
   return (
-    <div>
-      
-    </div>
+    <Wrapper>
+      <h1>Contact</h1>
+      <ContactForm />
+    </Wrapper>
   )
 }
 

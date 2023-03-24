@@ -13,6 +13,10 @@ export const Wrapper = styled.div `
         object-fit: contain;
         border-radius: 1rem;
     }
+
+    button {
+        margin-top: 2rem;
+    }
 `
 
 export const Price = styled.div `

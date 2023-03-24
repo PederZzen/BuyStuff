@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Button, Image, Wrapper } from './style'
+import { ButtonStyle } from '../../button/style'
+import { Image, Wrapper } from './style'
 
 const Item = ({ product }) => {
   return (
@@ -8,7 +9,7 @@ const Item = ({ product }) => {
         <Image src={product.imageUrl} alt={product.title}/>
         <p>{product.title}</p>
         <Link to={`/product/${product.id}`}>
-          <Button>View product</Button>
+          <ButtonStyle>View product</ButtonStyle>
         </Link>
     </Wrapper>
   )

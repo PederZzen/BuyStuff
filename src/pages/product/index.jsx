@@ -1,18 +1,18 @@
 import { Rate } from 'antd'
-import React from 'react'
+import React, { useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import Button from '../../components/button'
 import Review from '../../components/products/reviews'
+import { CartContext } from '../../context/ShoppingCartContext'
 import useFetch from '../../hooks/useFetch'
 import { BASE_URL } from '../../utils/constants'
-import { AddToCart, ImageContainer, Info, NewPrice, OldPrice, Percentage, Price, Wrapper } from './style'
+import { ImageContainer, Info, NewPrice, OldPrice, Percentage, Price, Wrapper } from './style'
 
 const Product = () => {
   const { id } = useParams()
   const { data, isLoading, isError } = useFetch(`${BASE_URL}/${id}`)
+  const { cart, setCart } = useContext(CartContext)
 
-  
-  
   const calculateDiscount = (x, y) => {
     let percentage = (x - y) / x * 100
     if (percentage === 0) {
@@ -39,6 +39,8 @@ const Product = () => {
     return <p>An error has occured</p>
   }
 
+  console.log(cart);
+
   return (
     <Wrapper>
       <ImageContainer>
@@ -49,7 +51,9 @@ const Product = () => {
         <h1>{data.title}</h1>
         <Price>{price}</Price>
         <Rate allowHalf disabled defaultValue={data.rating} />
-        <Button content={'Add to cart'}>Add to Cart</Button>
+        <Button content={'Add to cart'}>
+          Add to Cart
+        </Button>
       </div>
       <Info>
         <h2>Description</h2>

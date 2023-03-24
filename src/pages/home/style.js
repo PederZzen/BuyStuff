@@ -24,3 +24,8 @@ export const ProductsContainer = styled.div `
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 1rem;
 `
+
+export const InputContainer = styled.div `
+    width: 20rem;
+    margin: 2rem auto 0;
+`
