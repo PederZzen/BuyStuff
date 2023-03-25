@@ -11,15 +11,15 @@ import Product from './pages/product'
 const App = () => {
   return (
     <>
-      <Layout />
-
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="checkout" element={<Checkout />}></Route>
-        <Route path="success" element={<CheckoutSuccess />}></Route>
-        <Route path="contact" element={<Contact />}></Route>
-        <Route path="product/:id" element={<Product />}></Route>
-      </Routes>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="checkout" element={<Checkout />}></Route>
+          <Route path="success" element={<CheckoutSuccess />}></Route>
+          <Route path="contact" element={<Contact />}></Route>
+          <Route path="product/:id" element={<Product />}></Route>
+        </Routes>
+      </Layout>
     </>
   )
 }

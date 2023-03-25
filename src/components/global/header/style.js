@@ -1,36 +1,47 @@
-import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { color } from "../../../utils/constants";
 
-export const Wrapper = styled.nav `
+export const Wrapper = styled.header `
+    box-shadow: 0 0 1px .5px ${color.main};
     position: fixed;
     top: 0;
-    background-color: white;
-    padding: 1.5rem;
     width: 100%;
-    z-index: 99;
-    box-shadow: 0 0 2px ${color.main};
+    background-color: white;
+    z-index: 1;
+`
+
+export const Content = styled.div `
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+
+    @media (min-width: 1200px) {
+        padding: 1rem 0;
+
+    }
+`
+
+export const Logo = styled.p `
+    font-size: 1.5rem;
+    font-weight: bold;
+`
+
+export const MenuIcon = styled.button `
+    background-color: transparent;
+    border: none;
+    font-size: 1.3rem;
+    color: ${color.main};
 `
 
 export const Menu = styled.div `
     display: flex;
     align-items: center;
+    gap: 3rem;
 
-    * {
-        margin: 0 2rem;
-
-        &:nth-child(1) {
-            padding: 0;
-            margin: 0 1rem 0 0;
-        }
+    *:hover {
+        color: ${color.main};
     }
 `
-
-export const Content = styled.div `
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-`
-

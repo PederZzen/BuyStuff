@@ -17,6 +17,7 @@ export const Wrapper = styled.div `
     button {
         margin-top: 2rem;
     }
+
 `
 
 export const Price = styled.div `

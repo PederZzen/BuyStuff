@@ -39,8 +39,6 @@ const Product = () => {
     return <p>An error has occured</p>
   }
 
-  console.log(cart);
-
   return (
     <Wrapper>
       <ImageContainer>

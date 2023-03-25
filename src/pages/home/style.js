@@ -23,6 +23,14 @@ export const ProductsContainer = styled.div `
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 1rem;
+
+    @media (max-width: 800px) {
+        grid-template-columns: 1fr 1fr ;
+    }
+
+    @media (max-width: 500px) {
+        grid-template-columns: 1fr ;
+    }
 `
 
 export const InputContainer = styled.div `

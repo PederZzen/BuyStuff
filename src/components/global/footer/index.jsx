@@ -4,7 +4,8 @@ import { Wrapper } from './style'
 const Footer = () => {
   return (
     <Wrapper>
-      <p>All rights reserved Espen Pedersen</p>
+      <p>All rights reserved</p> 
+      <p>Espen Pedersen</p>
     </Wrapper>
   )
 }
