@@ -64,8 +64,8 @@ const Header = () => {
           <NavLink to={'/'}>
             <Logo>BuyStuff.no</Logo>
           </NavLink>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="contact">Contact</NavLink>
+          <NavLink to="/" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "activeNavlink" : ""}>Home</NavLink>
+          <NavLink to="contact" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "activeNavlink" : ""}>Contact</NavLink>
         </Menu>
         <Cart />
       </Content>

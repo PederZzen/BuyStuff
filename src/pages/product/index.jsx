@@ -1,17 +1,19 @@
 import { Rate } from 'antd'
-import React, { useContext } from 'react'
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import Button from '../../components/button'
 import Review from '../../components/products/reviews'
-import { CartContext } from '../../context/ShoppingCartContext'
 import useFetch from '../../hooks/useFetch'
+import { addProduct } from '../../state/cart/cartSlice'
 import { BASE_URL } from '../../utils/constants'
 import { ImageContainer, Info, NewPrice, OldPrice, Percentage, Price, Wrapper } from './style'
 
 const Product = () => {
   const { id } = useParams()
   const { data, isLoading, isError } = useFetch(`${BASE_URL}/${id}`)
-  const { cart, setCart } = useContext(CartContext)
+
+  const dispatch = useDispatch()
 
   const calculateDiscount = (x, y) => {
     let percentage = (x - y) / x * 100
@@ -21,11 +23,13 @@ const Product = () => {
     return `-${Math.floor(percentage)}%`
   }
 
-  let price = <p>{data.price}kr</p>
+  let priceOutput = <p>{data.price}kr</p>
+  let price = data.price
   let discount = ""
 
   if (data.discountedPrice !== data.price) {
-    price = <p><NewPrice>{data.discountedPrice}kr</NewPrice><OldPrice>{data.price}kr</OldPrice></p>
+    price = data.discountedPrice
+    priceOutput = <p><NewPrice>{data.discountedPrice}kr</NewPrice><OldPrice>{data.price}kr</OldPrice></p>
     discount = <Percentage>{calculateDiscount(data.price, data.discountedPrice)}</Percentage> 
   } 
 
@@ -39,6 +43,17 @@ const Product = () => {
     return <p>An error has occured</p>
   }
 
+  const handleAdd = () => {
+    dispatch(
+      addProduct({
+        id: data.id,
+        name: data.title,
+        price: price,
+        image: data.imageUrl,
+        amount: 1,
+      }));
+  }
+
   return (
     <Wrapper>
       <ImageContainer>
@@ -47,9 +62,9 @@ const Product = () => {
       </ImageContainer>
       <div>
         <h1>{data.title}</h1>
-        <Price>{price}</Price>
+        <Price>{priceOutput}</Price>
         <Rate allowHalf disabled defaultValue={data.rating} />
-        <Button content={'Add to cart'}>
+        <Button onClick={handleAdd} content={'Add to cart'}>
           Add to Cart
         </Button>
       </div>
