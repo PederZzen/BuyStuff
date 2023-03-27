@@ -3,7 +3,7 @@ import { ButtonStyle } from './style'
 
 const Button = (props) => {
   return (
-    <ButtonStyle onClick={props.onClick}>{props.content}</ButtonStyle>
+    <ButtonStyle>{props.content}</ButtonStyle>
   )
 }
 

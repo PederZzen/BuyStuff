@@ -3,6 +3,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import Button from '../../components/button'
+import { ButtonStyle } from '../../components/button/style'
 import Review from '../../components/products/reviews'
 import useFetch from '../../hooks/useFetch'
 import { addProduct } from '../../state/cart/cartSlice'
@@ -24,11 +25,11 @@ const Product = () => {
   }
 
   let priceOutput = <p>{data.price}kr</p>
-  let price = data.price
+  let price = Math.floor(data.price)
   let discount = ""
 
   if (data.discountedPrice !== data.price) {
-    price = data.discountedPrice
+    price = Math.floor(data.discountedPrice)
     priceOutput = <p><NewPrice>{data.discountedPrice}kr</NewPrice><OldPrice>{data.price}kr</OldPrice></p>
     discount = <Percentage>{calculateDiscount(data.price, data.discountedPrice)}</Percentage> 
   } 
@@ -64,9 +65,9 @@ const Product = () => {
         <h1>{data.title}</h1>
         <Price>{priceOutput}</Price>
         <Rate allowHalf disabled defaultValue={data.rating} />
-        <Button onClick={handleAdd} content={'Add to cart'}>
+        <ButtonStyle onClick={handleAdd} content={'Add to cart'}>
           Add to Cart
-        </Button>
+        </ButtonStyle>
       </div>
       <Info>
         <h2>Description</h2>

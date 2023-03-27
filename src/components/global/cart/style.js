@@ -29,6 +29,9 @@ export const CartItem = styled.li `
     display: flex;
     gap: .5rem;
     margin-bottom: .5rem;
+    align-items: center;
+    width: 100%;
+    position: relative;
 
     h3 {
         font-size: 1.2rem;
@@ -41,12 +44,38 @@ export const CartItem = styled.li `
         object-fit: cover;
         
     }
+
+    button {
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        height: 1.2rem;
+        width: 1.2rem;
+        font-size: 1rem;
+        opacity: .7;
+        transition: all .3s;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    > button {
+        background-color: red;
+        color: white;
+        border: none;
+        position: absolute;
+        right: 0;
+    }
 `
 
 export const CartDetails = styled.div `
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    gap: .5rem;
 `
 
 export const CartContent = styled.div `
@@ -54,6 +83,14 @@ export const CartContent = styled.div `
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+`
+
+export const Bottom = styled.div `
+    button {
+        margin-top: 1rem;
+        width: 100%;
+        color: ${color.main};
+    }
 `
 
 export const Total = styled.div `
@@ -68,15 +105,7 @@ export const Amount = styled.div `
 
     button {
         background-color: ${color.main};
-        opacity: .7;
         color: white;
         border: none;
-        padding: .1rem .3rem;
-        cursor: pointer;
-        transition: all .3s;
-
-        &:hover {
-            opacity: 1;
-        }
     }
 `
