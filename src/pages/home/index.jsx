@@ -32,7 +32,7 @@ const Home = () => {
     return (
         <Wrapper>
             <h1>Welcome to BuyStuff.no</h1>
-            <h2>Your friendly neighbourhood online store</h2>
+            <h2>Stuff at a very ordinary price... except the perfume</h2>
             <InputContainer>
                 <Input type="text" placeholder="Search.." onChange={(e) => {setSearch(e.target.value)}}></Input>
             </InputContainer>

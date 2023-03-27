@@ -3,11 +3,9 @@ import styled from "styled-components";
 export const Wrapper = styled.div `
     max-width: 1200px;
     margin: 10rem auto;
+    text-align: center;
 
-    form {
-        max-width: 30rem;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
+    p {
+        margin-top: 1rem;
     }
 `

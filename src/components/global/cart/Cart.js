@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { Amount, Bottom, Button, CartContent, CartDetails, CartItem, CartNumber, Total } from './style'
 import { Drawer } from 'antd'
 import { useDispatch, useSelector } from 'react-redux'
-import { checkout, decreaseAmount, increaseAmount, removeProduct } from '../../../state/cart/cartSlice'
+import { clearCart, decreaseAmount, increaseAmount, removeProduct } from '../../../state/cart/cartSlice'
 import { ButtonStyle } from '../../button/style'
 import { Link } from 'react-router-dom'
 
@@ -55,7 +55,7 @@ const Cart = () => {
           {
             cart.numberOfItems > 0 ? <Link to="success"><ButtonStyle onClick={()=>{
               onClose()
-              dispatch(checkout())
+              dispatch(clearCart())
             }}>Checkout</ButtonStyle></Link> : ""
           }
         </Bottom>

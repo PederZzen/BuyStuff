@@ -4,7 +4,7 @@ import { Drawer } from 'antd'
 import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import Cart from '../cart/Cart'
-import { Content, Logo, Menu, MenuIcon, Wrapper } from './style'
+import { Content, DrawerLink, Logo, Menu, MenuIcon, Wrapper } from './style'
 
 const Header = () => {
 
@@ -46,12 +46,12 @@ const Header = () => {
         </Content>
 
         <Drawer placement="top" onClose={onClose} open={open}>
-          <div>
+          <DrawerLink>
             <NavLink to="/">Home</NavLink>
-          </div>
-          <div>
+          </DrawerLink>
+          <DrawerLink>
             <NavLink to="contact">Contact</NavLink>
-          </div>
+          </DrawerLink>
         </Drawer>
       </Wrapper>
     )

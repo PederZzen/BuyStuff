@@ -3,9 +3,10 @@ import { color } from "../../utils/constants";
 
 export const Wrapper = styled.div `
     margin: 10rem auto;
-    max-width: 80%;
+    padding: 0 1rem;
+    max-width: 1200px;
     display: grid;
-    grid-template-columns: 2fr 2fr;
+    grid-template-columns: 1fr 1fr;
     gap: 1rem;
 
     img {
@@ -16,6 +17,15 @@ export const Wrapper = styled.div `
 
     button {
         margin-top: 2rem;
+    }
+
+    @media (max-width: 550px) {
+        display: flex;
+        flex-direction: column;
+
+        img {
+            width: 100%;
+        }
     }
 
 `
@@ -60,6 +70,6 @@ export const Info = styled.div `
     grid-column: span 2;
 
     h2 {
-        margin: 1rem 0;
+        margin: 3rem 0 1rem;
     }
 `

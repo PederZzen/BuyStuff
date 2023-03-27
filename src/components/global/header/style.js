@@ -45,3 +45,9 @@ export const Menu = styled.div `
         color: ${color.main};
     }
 `
+
+export const DrawerLink = styled.div `
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+`

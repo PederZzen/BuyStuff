@@ -2,6 +2,8 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup';
 import { schema } from './schema';
+import { FormStyled } from './style';
+import { ButtonStyle } from '../../button/style';
 
 const ContactForm = () => {
 
@@ -15,20 +17,21 @@ const ContactForm = () => {
 
     const onSubmit = (data) => {
         console.log(data);
+        return <p>Sup</p>
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <FormStyled onSubmit={handleSubmit(onSubmit)}>
             <input {...register('fullName')} placeholder="Full name"></input>
             <span>{errors.fullName?.message}</span>
             <input {...register('subject')} placeholder="Subject"></input>
             <span>{errors.subject?.message}</span>
             <input {...register('email')} placeholder="Email"></input>
             <span>{errors.email?.message}</span>
-            <input {...register('body')} placeholder="Message"></input>
+            <textarea {...register('body')} placeholder="Message"></textarea>
             <span>{errors.body?.message}</span>
-            <input type='submit'></input>
-        </form>
+            <ButtonStyle>Submit</ButtonStyle>
+        </FormStyled>
     )
 }
 

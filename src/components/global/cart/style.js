@@ -89,7 +89,7 @@ export const Bottom = styled.div `
     button {
         margin-top: 1rem;
         width: 100%;
-        color: ${color.main};
+        
     }
 `
 
