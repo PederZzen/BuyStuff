@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { color } from "../../utils/constants";
 
 export const Wrapper = styled.div `
+    margin: auto;
     max-width: 1200px;
     height: 100vh;
     display: flex;

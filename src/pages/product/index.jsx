@@ -7,6 +7,7 @@ import Review from '../../components/products/reviews'
 import useFetch from '../../hooks/useFetch'
 import { addProduct } from '../../state/cart/cartSlice'
 import { BASE_URL } from '../../utils/constants'
+import Meta from '../../utils/Meta'
 import { ImageContainer, Info, NewPrice, OldPrice, Percentage, Price, Wrapper } from './style'
 
 const Product = () => {
@@ -55,30 +56,33 @@ const Product = () => {
   }
 
   return (
-    <Wrapper>
-      <ImageContainer>
-        <img src={data.imageUrl} alt={data.title} />
-        {discount}
-      </ImageContainer>
-      <div>
-        <h1>{data.title}</h1>
-        <Price>{priceOutput}</Price>
-        <Rate allowHalf disabled defaultValue={data.rating} />
-        <ButtonStyle onClick={handleAdd} content={'Add to cart'}>
-          Add to Cart
-        </ButtonStyle>
-      </div>
-      <Info>
-        <h2>Description</h2>
-        <div>{data.description}</div>
-        <h2>Reviews</h2>
-        {data.reviews.length > 0 ? data.reviews.map((review, idx) => {
-          return (
-            <Review key={idx} name={review.username} desc={review.description} rating={review.rating}></Review>
-          )
-        }) : "No reviews yet.."}
-      </Info>
-    </Wrapper>
+    <>
+      <Meta title={data.title} description={data.description}/>
+      <Wrapper>
+        <ImageContainer>
+          <img src={data.imageUrl} alt={data.title} />
+          {discount}
+        </ImageContainer>
+        <div>
+          <h1>{data.title}</h1>
+          <Price>{priceOutput}</Price>
+          <Rate allowHalf disabled defaultValue={data.rating} />
+          <ButtonStyle onClick={handleAdd} content={'Add to cart'}>
+            Add to Cart
+          </ButtonStyle>
+        </div>
+        <Info>
+          <h2>Description</h2>
+          <div>{data.description}</div>
+          <h2>Reviews</h2>
+          {data.reviews.length > 0 ? data.reviews.map((review, idx) => {
+            return (
+              <Review key={idx} name={review.username} desc={review.description} rating={review.rating}></Review>
+            )
+          }) : "No reviews yet.."}
+        </Info>
+      </Wrapper>
+    </>
   )
 }
 

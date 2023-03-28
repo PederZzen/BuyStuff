@@ -5,15 +5,15 @@ export const ButtonStyle = styled.button `
     display: block;
     font-size: 1rem;
     border: 1px solid ${color.main};
-    background-color: transparent;
     border-radius: 3px;
-    color: ${color.main};
     padding: .5rem;
     cursor: pointer;
     transition: .3s all;
-
+    background-color: ${color.main};
+    color:  white;
+    
     &:hover {
-        background-color: ${color.main};
-        color:  white;
+        background-color: transparent;
+        color: ${color.main};
     }
 `

@@ -4,6 +4,7 @@ import { BASE_URL } from '../../utils/constants'
 import Item from '../../components/products/Item/index.jsx'
 import { InputContainer, ProductsContainer, Wrapper } from './style.js'
 import { Input } from 'antd'
+import Meta from '../../utils/Meta.jsx'
 
 const Home = () => {
 
@@ -30,6 +31,8 @@ const Home = () => {
     }
 
     return (
+        <>
+        <Meta title="Home" description="BuyStuff.no! Stuff at a very ordinary price... except the perfume"/>
         <Wrapper>
             <h1>Welcome to BuyStuff.no</h1>
             <h2>Stuff at a very ordinary price... except the perfume</h2>
@@ -43,6 +46,7 @@ const Home = () => {
                 }) : "No data"}
             </ProductsContainer>
         </Wrapper>
+        </>
     )
 }
 
