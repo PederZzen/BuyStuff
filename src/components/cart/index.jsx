@@ -1,11 +1,11 @@
+import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
-import React, { useState } from 'react'
 import { Amount, Bottom, Button, CartContent, CartDetails, CartItem, CartNumber, Total } from './style'
 import { Drawer } from 'antd'
 import { useDispatch, useSelector } from 'react-redux'
-import { clearCart, decreaseAmount, increaseAmount, removeProduct } from '../../../state/cart/cartSlice'
-import { ButtonStyle } from '../../button/style'
+import { clearCart, decreaseAmount, increaseAmount, removeProduct } from '../../state/cart/cartSlice'
+import { ButtonStyle } from '../button/style'
 import { Link } from 'react-router-dom'
 
 const Cart = () => {

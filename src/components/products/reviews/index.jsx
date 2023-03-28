@@ -1,4 +1,3 @@
-import React from 'react'
 import { Rating, Wrapper } from './style'
 
 const Review = (props) => {

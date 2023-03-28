@@ -1,48 +1,23 @@
+import Meta from '../../utils/meta'
+import { useEffect, useState } from 'react'
 import { Rate } from 'antd'
-import React from 'react'
 import { useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { ButtonStyle } from '../../components/button/style'
+import Loader from '../../components/loader'
 import Review from '../../components/products/reviews'
 import useFetch from '../../hooks/useFetch'
+import { ButtonStyle } from '../../components/button/style'
 import { addProduct } from '../../state/cart/cartSlice'
 import { BASE_URL } from '../../utils/constants'
-import Meta from '../../utils/Meta'
 import { ImageContainer, Info, NewPrice, OldPrice, Percentage, Price, Wrapper } from './style'
+import { calculateDiscount } from '../../functions/calculateDiscount'
 
 const Product = () => {
   const { id } = useParams()
   const { data, isLoading, isError } = useFetch(`${BASE_URL}/${id}`)
-
+  const [price, setPrice] = useState(null)
+  const [onSale, setOnSale] = useState(false)
   const dispatch = useDispatch()
-
-  const calculateDiscount = (x, y) => {
-    let percentage = (x - y) / x * 100
-    if (percentage === 0) {
-      return
-    }
-    return `-${Math.floor(percentage)}%`
-  }
-
-  let priceOutput = <p>{data.price}kr</p>
-  let price = Math.floor(data.price)
-  let discount = ""
-
-  if (data.discountedPrice !== data.price) {
-    price = Math.floor(data.discountedPrice)
-    priceOutput = <p><NewPrice>{data.discountedPrice}kr</NewPrice><OldPrice>{data.price}kr</OldPrice></p>
-    discount = <Percentage>{calculateDiscount(data.price, data.discountedPrice)}</Percentage> 
-  } 
-
-  if (!data) {
-    return <p>No data..</p>
-  }
-  if (isLoading) {
-    return <p>Loading...</p>
-  }
-  if (isError) {
-    return <p>An error has occured</p>
-  }
 
   const handleAdd = () => {
     dispatch(
@@ -53,6 +28,35 @@ const Product = () => {
         image: data.imageUrl,
         amount: 1,
       }));
+  }
+  
+  useEffect(() => {
+    if (data.price > data.discountedPrice) {
+      setPrice(Math.floor(data.discountedPrice))
+      setOnSale(true)
+    } else {
+      setPrice(Math.floor(data.price))
+    }
+  }, [data])
+
+  let discount;
+  let priceOutput = <p>{price}kr</p>
+
+  if (onSale) {
+    priceOutput = <p><NewPrice>{price}kr</NewPrice><OldPrice>{Math.floor(data.price)}kr</OldPrice></p>
+    discount = <Percentage>{calculateDiscount(data.price, data.discountedPrice)}</Percentage> 
+  } 
+
+  if (!data) {
+    return <p>No data..</p>
+  }
+
+  if (isLoading) {
+      return <Loader />
+  }
+
+  if (isError) {
+      return <p>An error has occured</p>
   }
 
   return (

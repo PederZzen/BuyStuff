@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import Meta from '../../utils/meta/index.jsx'
+import { useEffect, useState } from 'react'
+import { Input } from 'antd'
+import Item from '../../components/products/Item/index.jsx'
 import useFetch from '../../hooks/useFetch.js'
 import { BASE_URL } from '../../utils/constants'
-import Item from '../../components/products/Item/index.jsx'
 import { InputContainer, ProductsContainer, Wrapper } from './style.js'
-import { Input } from 'antd'
-import Meta from '../../utils/Meta.jsx'
+import Loader from '../../components/loader/index.jsx'
 
 const Home = () => {
-
     const { data, isLoading, isError } = useFetch(BASE_URL)
     const [products, setProducts] = useState(data)
     const [search, setSearch] = useState("")
@@ -24,7 +24,7 @@ const Home = () => {
         return <p>No data..</p>
     }
     if (isLoading) {
-        return <p>Loading..</p>
+        return <Loader />
     }
     if (isError) {
         return <p>An error has occured</p>

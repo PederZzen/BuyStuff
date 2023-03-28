@@ -1,9 +1,9 @@
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Drawer } from 'antd'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import Cart from '../cart/Cart'
+import Cart from '../../cart'
 import { Content, DrawerLink, Logo, Menu, MenuIcon, Wrapper } from './style'
 
 const Header = () => {

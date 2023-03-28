@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { color } from "../../../utils/constants";
+import { color } from "../../utils/constants";
 
 export const Button = styled.button `
     padding: .5rem;
@@ -89,7 +89,6 @@ export const Bottom = styled.div `
     button {
         margin-top: 1rem;
         width: 100%;
-        
     }
 `
 

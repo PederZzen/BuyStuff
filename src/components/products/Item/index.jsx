@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ButtonStyle } from '../../button/style'
 import { Image, OnSale, Wrapper } from './style'

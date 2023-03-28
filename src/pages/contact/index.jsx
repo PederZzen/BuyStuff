@@ -1,6 +1,5 @@
-import React from 'react'
+import Meta from '../../utils/meta'
 import ContactForm from '../../components/forms/contactForm'
-import Meta from '../../utils/Meta'
 import { Wrapper } from './style'
 
 const Contact = () => {

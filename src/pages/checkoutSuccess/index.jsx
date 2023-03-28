@@ -1,8 +1,7 @@
-
+import Meta from '../../utils/meta'
 import { faCircleCheck } from '@fortawesome/free-regular-svg-icons'
 import { Link } from 'react-router-dom'
 import { ButtonStyle } from '../../components/button/style'
-import Meta from '../../utils/Meta'
 import { Icon, Wrapper } from './style'
 
 const CheckoutSuccess = () => {
