@@ -42,3 +42,11 @@ Course assignment at Noroff school of Technology. A site that offers most of the
 2. run `npm i` to install necessary packages
 3. `npm start` to run project in localhost
 4. `npm run build` to build project
+
+&nbsp;
+
+## Useful links
+
+- [Live demo](https://buystuffnorway.netlify.app/)
+
+
