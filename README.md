@@ -1,6 +1,7 @@
 <div align="center">
     </br>
-    <h3>BuyStuff.no | Javascript Frameworks</h3>
+    <h3>BuyStuff.no</h3>
+    <p>Simple e-commerce store built with React</p>
     </br>
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/f8f17696-f428-49a2-884d-54df8307c3ff/deploy-status)](https://app.netlify.com/sites/buystuffnorway/deploys)
@@ -12,10 +13,6 @@
 ## Description
 
 ---
-
-&nbsp;
-
-Course assignment at Noroff school of Technology. A site that offers most of the functionality of a real online store. Products are fetched from a provided API. Users can view different products and add them to their cart before checking out.
 
 &nbsp;
 
